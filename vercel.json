@@ -1,13 +1,12 @@
 {
     "buildCommand": "npm run build",
+    "installCommand": "npm install",
+    "framework": null,
     "outputDirectory": "build/client",
-    "routes": [
+    "rewrites": [
       {
-        "handle": "filesystem"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
+        "source": "/(.*)",
+        "destination": "/index.html"
       }
     ]
   }
