@@ -9,11 +9,7 @@ import { Button } from "~/components/ui/button/button";
 import { Badge } from "~/components/ui/badge/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select/select";
 import styles from "./leads.module.css";
-import type { Route } from "./+types/leads";
 
-export function meta({}: Route.MetaArgs) {
-  return [{ title: "Leads - LeadCRM" }, { name: "description", content: "Manage and view all your leads" }];
-}
 
 export default function Leads() {
   const navigate = useNavigate();

@@ -6,11 +6,7 @@ import { getAnalytics, getLeads } from "~/data/leads";
 import { Header } from "~/components/layout/header";
 import { Badge } from "~/components/ui/badge/badge";
 import styles from "./dashboard.module.css";
-import type { Route } from "./+types/dashboard";
 
-export function meta({}: Route.MetaArgs) {
-  return [{ title: "Dashboard - LeadCRM" }, { name: "description", content: "View your lead analytics and metrics" }];
-}
 
 export default function Dashboard() {
   const navigate = useNavigate();

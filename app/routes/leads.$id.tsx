@@ -19,14 +19,7 @@ import { Header } from "~/components/layout/header";
 import { Badge } from "~/components/ui/badge/badge";
 import { Button } from "~/components/ui/button/button";
 import styles from "./leads.$id.module.css";
-import type { Route } from "./+types/leads.$id";
 
-export function meta({ params }: Route.MetaArgs) {
-  return [
-    { title: "Lead Details - LeadCRM" },
-    { name: "description", content: "View lead details" },
-  ];
-}
 
 export default function LeadDetail() {
   const navigate = useNavigate();

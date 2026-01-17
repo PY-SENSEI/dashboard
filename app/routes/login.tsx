@@ -6,11 +6,7 @@ import { Button } from "~/components/ui/button/button";
 import { Input } from "~/components/ui/input/input";
 import { Label } from "~/components/ui/label/label";
 import styles from "./login.module.css";
-import type { Route } from "./+types/login";
 
-export function meta({}: Route.MetaArgs) {
-  return [{ title: "Login - LeadCRM" }, { name: "description", content: "Login to your LeadCRM dashboard" }];
-}
 
 export default function Login() {
   const navigate = useNavigate();
