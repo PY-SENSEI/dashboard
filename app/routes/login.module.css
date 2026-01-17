@@ -1,0 +1,116 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-accent-2) 0%, var(--color-neutral-1) 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-neutral-1);
+  border-radius: var(--radius-4);
+  box-shadow: var(--shadow-3);
+  padding: var(--space-8);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.logoIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent-9);
+  margin: 0 auto var(--space-3);
+}
+
+.title {
+  font: var(--font-heading);
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.subtitle {
+  color: var(--color-neutral-11);
+  font-size: var(--font-size-2);
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.error {
+  padding: var(--space-3);
+  background: var(--color-error-3);
+  color: var(--color-error-11);
+  border-radius: var(--radius-2);
+  font-size: var(--font-size-2);
+  text-align: center;
+}
+
+.demoInfo {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background: var(--color-accent-2);
+  border-radius: var(--radius-2);
+  border-left: 3px solid var(--color-accent-9);
+}
+
+.demoTitle {
+  font-weight: 600;
+  color: var(--color-accent-11);
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-size-2);
+}
+
+.demoCredentials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--font-size-1);
+  color: var(--color-neutral-11);
+}
+
+.demoCredentials code {
+  background: var(--color-neutral-3);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-1);
+  font-family: var(--font-monospace-code);
+  color: var(--color-accent-11);
+}
+
+.switchText {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-accent-4);
+  font-size: var(--font-size-1);
+  color: var(--color-neutral-11);
+  text-align: center;
+}
+
+.link {
+  color: var(--color-accent-11);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--space-4);
+  }
+
+  .card {
+    padding: var(--space-6);
+  }
+}

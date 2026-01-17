@@ -1,0 +1,215 @@
+.container {
+  min-height: 100vh;
+  background: var(--color-neutral-1);
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
+.pageHeader {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font: var(--font-display);
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.subtitle {
+  color: var(--color-neutral-11);
+  font-size: var(--font-size-3);
+  margin: 0;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.metricCard {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  padding: var(--space-5);
+  transition: all 0.2s var(--ease-out);
+}
+
+.metricCard:hover {
+  border-color: var(--color-accent-7);
+  box-shadow: var(--shadow-2);
+  transform: translateY(-2px);
+}
+
+.metricHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.metricLabel {
+  color: var(--color-neutral-11);
+  font-size: var(--font-size-2);
+  font-weight: 500;
+  margin: 0;
+}
+
+.metricIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent-9);
+}
+
+.metricValue {
+  font-size: var(--font-size-7);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.metricChange {
+  font-size: var(--font-size-1);
+  color: var(--color-neutral-11);
+  margin-top: var(--space-2);
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.chartCard {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  padding: var(--space-5);
+}
+
+.chartTitle {
+  font-size: var(--font-size-4);
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.chartContainer {
+  height: 300px;
+}
+
+.recentLeads {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  padding: var(--space-5);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-4);
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.viewAllLink {
+  color: var(--color-accent-11);
+  text-decoration: none;
+  font-size: var(--font-size-2);
+  font-weight: 500;
+  transition: color 0.2s var(--ease-out);
+}
+
+.viewAllLink:hover {
+  color: var(--color-accent-10);
+}
+
+.leadsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.leadItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-2);
+  transition: all 0.2s var(--ease-out);
+  text-decoration: none;
+  color: inherit;
+}
+
+.leadItem:hover {
+  background: var(--color-neutral-3);
+  transform: translateX(4px);
+}
+
+.leadInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.leadName {
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  font-size: var(--font-size-2);
+}
+
+.leadCompany {
+  color: var(--color-neutral-11);
+  font-size: var(--font-size-1);
+}
+
+.leadMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.leadValue {
+  font-weight: 600;
+  color: var(--color-accent-11);
+  font-size: var(--font-size-2);
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: var(--space-4);
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chartContainer {
+    height: 250px;
+  }
+
+  .leadMeta {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-1);
+  }
+}

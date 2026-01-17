@@ -1,0 +1,238 @@
+.container {
+  min-height: 100vh;
+  background: var(--color-neutral-1);
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
+.pageHeader {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font: var(--font-display);
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.subtitle {
+  color: var(--color-neutral-11);
+  font-size: var(--font-size-3);
+  margin: 0;
+}
+
+.controls {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.controlsRow {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--color-neutral-10);
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: var(--space-8);
+}
+
+.filterGroup {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.select {
+  min-width: 150px;
+}
+
+.tableCard {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  background: var(--color-neutral-2);
+  border-bottom: 1px solid var(--color-neutral-6);
+}
+
+.tableHeaderCell {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-12);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s var(--ease-out);
+}
+
+.tableHeaderCell:hover {
+  background: var(--color-neutral-3);
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+
+.sortIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-neutral-10);
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-neutral-5);
+  transition: background 0.2s var(--ease-out);
+  cursor: pointer;
+}
+
+.tableRow:hover {
+  background: var(--color-neutral-2);
+}
+
+.tableCell {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-11);
+}
+
+.leadName {
+  font-weight: 600;
+  color: var(--color-neutral-12);
+}
+
+.leadEmail {
+  color: var(--color-neutral-10);
+  font-size: var(--font-size-1);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-neutral-6);
+  background: var(--color-neutral-1);
+}
+
+.paginationInfo {
+  color: var(--color-neutral-11);
+  font-size: var(--font-size-2);
+}
+
+.paginationControls {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.emptyState {
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-neutral-8);
+  margin: 0 auto var(--space-4);
+}
+
+.emptyTitle {
+  font-size: var(--font-size-4);
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.emptyText {
+  color: var(--color-neutral-11);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: var(--space-4);
+  }
+
+  .controlsRow {
+    flex-direction: column;
+  }
+
+  .searchWrapper {
+    min-width: 100%;
+  }
+
+  .filterGroup {
+    width: 100%;
+  }
+
+  .select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tableWrapper {
+    border-radius: var(--radius-3);
+  }
+
+  .tableCell {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-1);
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: stretch;
+  }
+
+  .paginationControls {
+    justify-content: center;
+  }
+}
