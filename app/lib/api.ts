@@ -1,5 +1,5 @@
 // API configuration and utilities
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://dashboard-pi-six-10.vercel.app/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://dashboard-new-nu.vercel.app/';
 
 interface ApiError {
   message: string;
