@@ -15,6 +15,14 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? process.env.FRONTEND_URL || '*'
+    : '*',
+  credentials: true
+};
+app.use(cors(corsOptions));
+
 // Database connection
 mongoose
   .connect(process.env.MONGODB_URI)
