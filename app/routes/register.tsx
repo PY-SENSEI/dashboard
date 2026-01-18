@@ -1,30 +1,36 @@
-import { Form, redirect, useActionData, useNavigation } from 'react-router';
+import { useNavigate } from 'react-router';
+import { useState } from 'react';
 import { register } from '~/data/auth';
 import { Button } from '~/components/ui/button/button';
 import { Input } from '~/components/ui/input/input';
 import { Label } from '~/components/ui/label/label';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '~/components/ui/card/card';
-import type { Route } from './+types/register';
 import styles from './login.module.css';
 
-export async function action({ request }: Route.ActionArgs) {
-  const formData = await request.formData();
-  const email = formData.get('email') as string;
-  const password = formData.get('password') as string;
-  const name = formData.get('name') as string;
-
-  try {
-    await register({ email, password, name });
-    return redirect('/dashboard');
-  } catch (error) {
-    return { error: error instanceof Error ? error.message : 'Registration failed' };
-  }
-}
-
 export default function Register() {
-  const actionData = useActionData<typeof action>();
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+    const name = formData.get('name') as string;
+
+    try {
+      await register({ email, password, name });
+      navigate('/dashboard');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Registration failed');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -34,7 +40,7 @@ export default function Register() {
           <CardDescription>Sign up to get started with LeadCRM</CardDescription>
         </CardHeader>
         <CardContent>
-          <Form method="post" className={styles.form}>
+          <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
               <Label htmlFor="name">Full Name</Label>
               <Input
@@ -72,8 +78,8 @@ export default function Register() {
               />
             </div>
 
-            {actionData?.error && (
-              <div className={styles.error}>{actionData.error}</div>
+            {error && (
+              <div className={styles.error}>{error}</div>
             )}
 
             <Button type="submit" className={styles.submitButton} disabled={isSubmitting}>
@@ -86,7 +92,7 @@ export default function Register() {
                 Sign in
               </a>
             </p>
-          </Form>
+          </form>
         </CardContent>
       </Card>
     </div>
